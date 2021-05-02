@@ -1,0 +1,51 @@
+$red-color: #fc3c3b;
+$green-color: #71fc72;
+$yellow-color: #f9e141;
+$blue-color: #2d7dff;
+
+.student {
+  img {
+    width: 211px;
+    height: 283px;
+    object-fit: cover;
+    border-radius: 15px;
+
+    &.red {
+      border: 2px solid $red-color;
+    }
+
+    &.green {
+      border: 2px solid $green-color;
+    }
+
+    &.yellow {
+      border: 2px solid $yellow-color;
+    }
+
+    &.blue {
+      border: 2px solid $blue-color;
+    }
+  }
+
+  p {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    margin: 1rem;
+
+    &.red {
+      color: $red-color;
+    }
+    &.green {
+      color: $green-color;
+    }
+    &.yellow {
+      color: $yellow-color;
+    }
+    &.blue {
+      color: $blue-color;
+    }
+  }
+}
