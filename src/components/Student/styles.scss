@@ -13,6 +13,7 @@ $blue-color: #2d7dff;
     object-fit: cover;
     border-radius: 15px;
     box-sizing: border-box;
+    transition: 0.5s;
 
     &.red {
       border: 2px solid $red-color;
@@ -28,6 +29,10 @@ $blue-color: #2d7dff;
 
     &.blue {
       border: 2px solid $blue-color;
+    }
+
+    &:hover {
+      filter: brightness(0.7);
     }
   }
 
