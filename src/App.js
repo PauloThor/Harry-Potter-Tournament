@@ -8,31 +8,9 @@ class App extends Component {
     students: [],
     loading: true,
     gameStarted: false,
-    first: 0,
-    second: 1,
-    third: 2,
-  };
-
-  getRandom = () => {
-    return Math.floor(Math.random() * (this.state.students.length - 1));
-  };
-
-  handleRandom = () => {
-    let randomFirst = this.getRandom();
-    let randomSecond = this.getRandom();
-    let randomThird = this.getRandom();
-
-    while (randomSecond === randomFirst) {
-      randomSecond = this.getRandom();
-    }
-
-    while (randomThird === randomSecond || randomThird === randomFirst) {
-      randomThird = this.getRandom();
-    }
-
-    this.setState({ first: randomFirst });
-    this.setState({ second: randomSecond });
-    this.setState({ third: randomThird });
+    firstStudent: "",
+    secondStudent: "",
+    thirdStudent: "",
   };
 
   toggleGame = () => {
@@ -43,7 +21,6 @@ class App extends Component {
 
   handleStart = () => {
     this.toggleGame();
-
     this.handleRandom();
   };
 
@@ -55,8 +32,56 @@ class App extends Component {
       );
   }
 
+  getRandom = (size) => {
+    return Math.floor(Math.random() * size);
+  };
+
+  getHouse = (house) => {
+    return this.state.students.filter((student) => student.house === house);
+  };
+
+  handleRandom = () => {
+    const houses = {
+      0: this.getHouse("Gryffindor"),
+      1: this.getHouse("Slytherin"),
+      2: this.getHouse("Ravenclaw"),
+      3: this.getHouse("Hufflepuff"),
+    };
+
+    let randomFirst = this.getRandom(4);
+    let randomSecond = this.getRandom(4);
+    let randomThird = this.getRandom(4);
+
+    while (randomSecond === randomFirst) {
+      randomSecond = this.getRandom(4);
+    }
+
+    while (randomThird === randomSecond || randomThird === randomFirst) {
+      randomThird = this.getRandom(4);
+    }
+
+    this.setState({
+      firstStudent:
+        houses[randomFirst][this.getRandom(houses[randomFirst].length)],
+    });
+    this.setState({
+      secondStudent:
+        houses[randomSecond][this.getRandom(houses[randomSecond].length)],
+    });
+    this.setState({
+      thirdStudent:
+        houses[randomThird][this.getRandom(houses[randomThird].length)],
+    });
+  };
+
   render() {
-    const { students, gameStarted, first, second, third } = this.state;
+    const {
+      students,
+      gameStarted,
+      firstStudent,
+      secondStudent,
+      thirdStudent,
+    } = this.state;
     return (
       <div className="App">
         {!gameStarted && (
@@ -65,10 +90,11 @@ class App extends Component {
         {gameStarted && (
           <Game
             students={students}
-            first={first}
-            second={second}
-            third={third}
+            firstStudent={firstStudent}
+            secondStudent={secondStudent}
+            thirdStudent={thirdStudent}
             toggleGame={this.toggleGame}
+            getRandom={this.getRandom}
           />
         )}
       </div>

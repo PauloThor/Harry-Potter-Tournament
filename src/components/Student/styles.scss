@@ -4,11 +4,15 @@ $yellow-color: #f9e141;
 $blue-color: #2d7dff;
 
 .student {
+  margin: 0 2rem;
+  width: 311px;
+
   img {
     width: 211px;
     height: 283px;
     object-fit: cover;
     border-radius: 15px;
+    box-sizing: border-box;
 
     &.red {
       border: 2px solid $red-color;
@@ -31,7 +35,7 @@ $blue-color: #2d7dff;
     font-family: Nunito;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 41px;
     margin: 1rem;
 

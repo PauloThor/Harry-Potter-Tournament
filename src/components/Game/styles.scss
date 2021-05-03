@@ -1,7 +1,7 @@
 .students {
   display: flex;
-  justify-content: space-around;
-  margin: 0 200px;
+  justify-content: center;
+  margin: 20px 200px;
 }
 
 .gameButton {
@@ -17,4 +17,6 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 41px;
+
+  margin-top: 2rem;
 }
