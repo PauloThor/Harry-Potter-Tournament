@@ -6,6 +6,7 @@ import Start from "./components/Start";
 class App extends Component {
   state = {
     students: [],
+    staff: [],
     loading: true,
     gameStarted: false,
     firstStudent: "",
@@ -30,6 +31,10 @@ class App extends Component {
       .then((response) =>
         this.setState({ students: response, loading: false })
       );
+
+    fetch("https://hp-api.herokuapp.com/api/characters/staff")
+      .then((response) => response.json())
+      .then((response) => this.setState({ staff: response }));
   }
 
   getRandom = (size) => {

@@ -1,0 +1,27 @@
+.gamePhase2 {
+  animation: appear 2s;
+  img {
+    width: 200px;
+  }
+}
+
+#player {
+  display: flex;
+
+  div {
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url("https://i.pinimg.com/originals/df/4f/cc/df4fccdafce9c95a1ce229ee1f2d20eb.jpg");
+    margin: 1rem;
+
+    label {
+      margin: 1px 0;
+      text-align: start;
+      color: black;
+      font-weight: 600;
+      padding: 0.2rem 1rem;
+    }
+  }
+}
