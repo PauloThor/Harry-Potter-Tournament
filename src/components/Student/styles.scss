@@ -1,7 +1,8 @@
-$red-color: #fc3c3b;
-$green-color: #71fc72;
-$yellow-color: #f9e141;
-$blue-color: #2d7dff;
+$red-color: #a91c01;
+$green-color: #358725;
+$yellow-color: #a38f04;
+$blue-color: #0043b1;
+$blue-gray-color: #647b80;
 
 .student {
   margin: 0 2rem;
@@ -39,21 +40,22 @@ $blue-color: #2d7dff;
   p {
     font-style: normal;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 41px;
-    margin: 1rem;
+    margin: 0;
+    border-radius: 5px;
 
     &.red {
-      color: $red-color;
+      background-color: $red-color;
     }
     &.green {
-      color: $green-color;
+      background-color: $green-color;
     }
     &.yellow {
-      color: $yellow-color;
+      background-color: $yellow-color;
     }
     &.blue {
-      color: $blue-color;
+      background-color: $blue-color;
     }
   }
 }

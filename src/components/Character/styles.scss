@@ -41,6 +41,7 @@ $blue-color: #2d7dff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  animation: appear 2s;
 
   .student {
     width: 210px;

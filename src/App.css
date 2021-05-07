@@ -4,7 +4,9 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   background-image: url(https://wallpaperaccess.com/full/22917.jpg);
-  height: 600px;
+  /* background-image: url(../src/assets/titleBig.png); */
+  /* background-size: contain; */
+  height: 500px;
   font-family: "Turret Road", cursive;
 }
 

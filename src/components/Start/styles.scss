@@ -1,3 +1,12 @@
+@keyframes button {
+  from {
+    transform: translateY(-10%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 h1 {
   font-style: normal;
   font-weight: 600;
@@ -10,4 +19,24 @@ h3 {
   font-weight: normal;
   font-size: 40px;
   line-height: 55px;
+}
+
+div.start {
+  margin-top: 5%;
+}
+
+.gameButton {
+  width: 200px;
+  height: 80px;
+
+  background-size: cover;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 21px 14px 15px 5px #000000;
+  animation: button 1s infinite;
+  cursor: pointer;
+}
+
+.startButton {
+  background-image: url(../../assets/start.png);
 }

@@ -1,8 +1,6 @@
 import { Component } from "react";
 import "./styles.scss";
 
-import colors from "../Student/index";
-
 export default class Player extends Component {
   colors = {
     Gryffindor: "red",
@@ -15,12 +13,29 @@ export default class Player extends Component {
     const { character } = this.props;
     return (
       <div className="" id="player">
-        <div>
-          <label>Name: {character.name}</label>
-          <label>House: {character.house}</label>
-          <label>Gender: {character.gender}</label>
-          <label>Wand: {character.wand.core}</label>
-          <label>Birth: {character.dateOfBirth}</label>
+        <div className="player-info">
+          <ul>
+            <li>
+              <label className="type">Name: </label>{" "}
+              <label>{character.name}</label>
+            </li>
+            <li>
+              <label className="type">House: </label>{" "}
+              <label>{character.house}</label>
+            </li>
+            <li>
+              <label className="type">Gender: </label>{" "}
+              <label>{character.gender}</label>
+            </li>
+            <li>
+              <label className="type">Wand: </label>{" "}
+              <label>{character.wand.core || "Unknown"}</label>
+            </li>
+            <li>
+              <label className="type">Ancestry: </label>
+              <label>{character.ancestry || "Unknown"}</label>
+            </li>
+          </ul>
         </div>
         <div className="student">
           <img
@@ -29,6 +44,7 @@ export default class Player extends Component {
             className={this.colors[character.house]}
           />
         </div>
+        <p>{this.props.assistant.name}</p>
       </div>
     );
   }

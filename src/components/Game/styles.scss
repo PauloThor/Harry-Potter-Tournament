@@ -1,9 +1,30 @@
 @keyframes appear {
   from {
     opacity: 0;
+    transform: translateX(-50%);
   }
   to {
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes vanish {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1,
+h2,
+h3,
+p,
+label {
+  &:hover {
+    color: orange;
   }
 }
 
@@ -17,49 +38,33 @@ button {
 }
 
 .students {
+  animation: appear 2.5s;
   display: flex;
   justify-content: center;
   margin: 20px 200px;
 }
 
-.gameButton {
-  width: 545px;
-  height: 58px;
-
-  background: #f9e141;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 41px;
-
-  // margin-top: 0.1rem;
-
-  transition: 0.5s;
-
-  &:hover {
-    background-color: #181a1b;
-    color: #f5f5f5;
-  }
-}
-
 .gamePhase0 {
-  animation: appear 2.5s;
+  animation: vanish 2s;
 
   h2 {
     font-size: 30px;
   }
+
+  .playButton {
+    background-image: url(../../assets/play.png);
+    width: 140px;
+    cursor: pointer;
+  }
 }
 
 .gamePhase1 {
-  animation: appear 2.5s;
+  animation: vanish 2.5s;
 }
 
 .introPhase2 {
   img {
     margin-top: 10%;
-    animation: appear 3s;
+    animation: vanish 3s;
   }
 }

@@ -59,20 +59,21 @@ export default class Game extends Component {
       <div>
         {gamePhase === 0 && (
           <div className="gamePhase0">
-            <h2>Esses são os 3 estudantes escolhidos!</h2>
+            <h2>These are the 3 chosen students!</h2>
             <div className="students">
               <Student student={firstStudent} />
               <Student student={secondStudent} />
               <Student student={thirdStudent} />
             </div>
-            <button onClick={this.handleGamePhase} className="gameButton">
-              Jogar
-            </button>
+            <div
+              className="gameButton playButton"
+              onClick={this.handleGamePhase}
+            ></div>
           </div>
         )}
         {gamePhase === 1 && (
           <div className="gamePhase1">
-            <h2>Escolha o seu personagem!</h2>
+            <h2>Choose your character!</h2>
             <Character
               remainingStudents={this.remainingStudents}
               chooseCharacter={this.chooseCharacter}
@@ -81,13 +82,16 @@ export default class Game extends Component {
         )}
         {gamePhase === 2 && cinematic && (
           <div className="introPhase2">
-            <h2>Que os jogos comecem!</h2>
-            <img src="https://i.pinimg.com/originals/81/e8/9f/81e89f5fb9e53742b7e9a109cc53baf9.gif"></img>
+            <h2>Another participant?!</h2>
+            <img
+              src="https://i.pinimg.com/originals/81/e8/9f/81e89f5fb9e53742b7e9a109cc53baf9.gif"
+              alt="goblet"
+            ></img>
           </div>
         )}
         {gamePhase === 2 && !cinematic && (
           <div className="gamePhase2">
-            <Player character={character} />
+            <Player character={character} assistant={this.props.assistant} />
           </div>
         )}
       </div>

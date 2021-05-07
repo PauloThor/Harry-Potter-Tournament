@@ -12,6 +12,7 @@ class App extends Component {
     firstStudent: "",
     secondStudent: "",
     thirdStudent: "",
+    assistant: "",
   };
 
   toggleGame = () => {
@@ -77,6 +78,11 @@ class App extends Component {
       thirdStudent:
         houses[randomThird][this.getRandom(houses[randomThird].length)],
     });
+
+    const chosenAssistant = this.state.staff[
+      this.getRandom(this.state.staff.length)
+    ];
+    this.setState({ assistant: chosenAssistant });
   };
 
   render() {
@@ -86,6 +92,7 @@ class App extends Component {
       firstStudent,
       secondStudent,
       thirdStudent,
+      assistant,
     } = this.state;
     return (
       <div className="App">
@@ -100,6 +107,7 @@ class App extends Component {
             thirdStudent={thirdStudent}
             toggleGame={this.toggleGame}
             getRandom={this.getRandom}
+            assistant={assistant}
           />
         )}
       </div>

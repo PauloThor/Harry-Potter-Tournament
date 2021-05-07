@@ -1,7 +1,40 @@
 .gamePhase2 {
-  animation: appear 2s;
   img {
     width: 200px;
+  }
+
+  div.student {
+    animation: appear 2s;
+  }
+
+  li:first-child {
+    animation: appear 2s;
+  }
+
+  li:nth-child(2) {
+    animation: appear 2.5s;
+  }
+
+  li:nth-child(3) {
+    animation: appear 3s;
+  }
+
+  li:nth-child(4) {
+    animation: appear 3.5s;
+  }
+
+  li:nth-child(5) {
+    animation: appear 4s;
+  }
+
+  ul {
+    padding: 10px;
+
+    li {
+      list-style: none;
+      text-align: start;
+      padding: 10px;
+    }
   }
 }
 
@@ -10,18 +43,37 @@
 
   div {
     width: 200px;
+    height: 280px;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    background-image: url("https://i.pinimg.com/originals/df/4f/cc/df4fccdafce9c95a1ce229ee1f2d20eb.jpg");
+    background-image: url(../../assets/bg.png);
     margin: 1rem;
 
     label {
       margin: 1px 0;
       text-align: start;
-      color: black;
+      color: #61858d;
       font-weight: 600;
-      padding: 0.2rem 1rem;
+      font-size: 1.3rem;
+      padding: 2px;
+
+      &.type {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 1.1rem;
+      }
+
+      &:hover {
+        color: orange;
+      }
+    }
+
+    &.player-info {
+      width: 280px;
     }
   }
+}
+
+label:hover {
+  transform: scale(1.2);
 }

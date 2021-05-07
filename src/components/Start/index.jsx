@@ -1,16 +1,17 @@
 import { Component } from "react";
 
 import "./styles.scss";
+import Title from "../../assets/title.png";
 
 export default class Start extends Component {
   render() {
     return (
-      <div>
-        <h1>Torneio tribruxo</h1>
-        <h3>Clique no botão para encontrar os feiticeiros!</h3>
-        <button className="gameButton" onClick={() => this.props.handleStart()}>
-          Começar!
-        </button>
+      <div className="start">
+        <img src={Title} alt="gameTitle"></img>
+        <div
+          className="gameButton startButton"
+          onClick={this.props.handleStart}
+        ></div>
       </div>
     );
   }
