@@ -55,7 +55,7 @@ $blue-color: #2d7dff;
       transition: all ease-in-out 0.5s;
 
       &:hover {
-        border: 2px solid orange;
+        // border: 2px solid orange;
         transform: scale(1.2);
         filter: brightness(1);
       }

@@ -45,6 +45,13 @@ export default class Game extends Component {
     this.setState({ cinematic: !cinematic });
   };
 
+  handlePhase3 = () => {
+    this.handleGamePhase();
+    this.toggleCinematic();
+
+    setTimeout(this.toggleCinematic, 2200);
+  };
+
   render() {
     const {
       firstStudent,
@@ -59,7 +66,7 @@ export default class Game extends Component {
       <div>
         {gamePhase === 0 && (
           <div className="gamePhase0">
-            <h2>These are the 3 chosen students!</h2>
+            <h2>These are the 3 chosen champions!</h2>
             <div className="students">
               <Student student={firstStudent} />
               <Student student={secondStudent} />
@@ -82,7 +89,7 @@ export default class Game extends Component {
         )}
         {gamePhase === 2 && cinematic && (
           <div className="introPhase2">
-            <h2>Another participant?!</h2>
+            <h1>Huh?! Another champion?!</h1>
             <img
               src="https://i.pinimg.com/originals/81/e8/9f/81e89f5fb9e53742b7e9a109cc53baf9.gif"
               alt="goblet"
@@ -91,9 +98,14 @@ export default class Game extends Component {
         )}
         {gamePhase === 2 && !cinematic && (
           <div className="gamePhase2">
-            <Player character={character} assistant={this.props.assistant} />
+            <Player
+              character={character}
+              assistant={this.props.assistant}
+              handlePhase3={this.handlePhase3}
+            />
           </div>
         )}
+        {gamePhase === 3 && cinematic && <div className="gamePhase3"></div>}
       </div>
     );
   }

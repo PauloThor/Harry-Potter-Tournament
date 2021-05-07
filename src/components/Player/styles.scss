@@ -1,4 +1,6 @@
 .gamePhase2 {
+  padding-top: 1rem;
+
   img {
     width: 200px;
   }
@@ -8,23 +10,23 @@
   }
 
   li:first-child {
-    animation: appear 2s;
+    animation: appear 0.5s;
   }
 
   li:nth-child(2) {
-    animation: appear 2.5s;
+    animation: appear 1s;
   }
 
   li:nth-child(3) {
-    animation: appear 3s;
+    animation: appear 1.5s;
   }
 
   li:nth-child(4) {
-    animation: appear 3.5s;
+    animation: appear 2s;
   }
 
   li:nth-child(5) {
-    animation: appear 4s;
+    animation: appear 2.5s;
   }
 
   ul {
@@ -40,6 +42,15 @@
 
 #player {
   display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+
+  h2 {
+    width: 100%;
+    margin: 0.5rem;
+    height: 25px;
+    margin-bottom: -1.5rem;
+  }
 
   div {
     width: 200px;
@@ -76,4 +87,56 @@
 
 label:hover {
   transform: scale(1.2);
+}
+
+#character-created {
+  display: flex;
+  flex-wrap: wrap;
+
+  .assistant {
+    width: 40%;
+
+    h2 {
+      margin: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    img {
+      // margin-top: 3rem;
+    }
+  }
+}
+
+.continueButton {
+  background-image: url(../../assets/continue.png);
+
+  &.gameButton {
+    margin-top: 3rem;
+    height: 93px;
+  }
+}
+
+figcaption {
+  background-color: #61858d;
+  width: 200px;
+  margin: 0 auto;
+  padding: 0.5rem 0.5rem;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-image: url(../../assets/bg.png);
+  background-size: contain;
+
+  &:hover {
+    color: orange;
+  }
+}
+
+h2,
+h1 {
+  background-color: #61858d;
+  padding: 0 0.5rem;
+  border-radius: 15px;
+  background-image: url(../../assets/bg.png);
+  background-size: contain;
 }
