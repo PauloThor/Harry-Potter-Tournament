@@ -18,6 +18,17 @@
   }
 }
 
+@keyframes appearFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 h1,
 h2,
 h3,
@@ -62,9 +73,10 @@ button {
   animation: vanish 2.5s;
 }
 
-.introPhase2 {
+.introPhase {
   img {
     // margin-top: 10%;
     animation: vanish 3s;
+    border: 6px solid #647b80;
   }
 }

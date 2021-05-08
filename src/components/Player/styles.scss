@@ -48,8 +48,10 @@
   h2 {
     width: 100%;
     margin: 0.5rem;
-    height: 25px;
+    height: 43px;
     margin-bottom: -1.5rem;
+    font-size: 40px;
+    border: 2px solid #647b80;
   }
 
   div {
@@ -95,14 +97,11 @@ label:hover {
 
   .assistant {
     width: 40%;
+    animation: appearFromRight 2s;
 
     h2 {
       margin: 0.5rem;
       margin-bottom: 2rem;
-    }
-
-    img {
-      // margin-top: 3rem;
     }
   }
 }
@@ -139,4 +138,10 @@ h1 {
   border-radius: 15px;
   background-image: url(../../assets/bg.png);
   background-size: contain;
+  border: 2px solid #647b80;
+}
+
+h1 {
+  background-size: auto;
+  // background-color: none;
 }

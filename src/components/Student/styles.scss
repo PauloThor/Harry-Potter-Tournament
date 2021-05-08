@@ -43,20 +43,26 @@ $blue-gray-color: #647b80;
     font-weight: 600;
     font-size: 20px;
     line-height: 41px;
-    margin: 0;
-    border-radius: 5px;
+    margin: 0.5rem 0;
+    border-radius: 15px;
+    background-image: url(../../assets/bg.png);
+    border: 2px solid #61858d;
 
     &.red {
       background-color: $red-color;
+      background-image: none;
     }
     &.green {
       background-color: $green-color;
+      background-image: none;
     }
     &.yellow {
       background-color: $yellow-color;
+      background-image: none;
     }
     &.blue {
       background-color: $blue-color;
+      background-image: none;
     }
   }
 }

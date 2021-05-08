@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Character from "../Character";
+import FirstTrial from "../FirstTrial";
 import Player from "../Player";
 import Student from "../Student";
 
@@ -45,11 +46,11 @@ export default class Game extends Component {
     this.setState({ cinematic: !cinematic });
   };
 
-  handlePhase3 = () => {
+  handlePhase = (interval) => {
     this.handleGamePhase();
     this.toggleCinematic();
 
-    setTimeout(this.toggleCinematic, 2200);
+    setTimeout(this.toggleCinematic, interval);
   };
 
   render() {
@@ -58,6 +59,7 @@ export default class Game extends Component {
       secondStudent,
       thirdStudent,
       toggleGame,
+      getRandom,
     } = this.props;
 
     const { character, gamePhase, cinematic } = this.state;
@@ -88,7 +90,7 @@ export default class Game extends Component {
           </div>
         )}
         {gamePhase === 2 && cinematic && (
-          <div className="introPhase2">
+          <div className="introPhase">
             <h1>Huh?! Another champion?!</h1>
             <img
               src="https://i.pinimg.com/originals/81/e8/9f/81e89f5fb9e53742b7e9a109cc53baf9.gif"
@@ -101,11 +103,30 @@ export default class Game extends Component {
             <Player
               character={character}
               assistant={this.props.assistant}
-              handlePhase3={this.handlePhase3}
+              handlePhase={this.handlePhase}
             />
           </div>
         )}
-        {gamePhase === 3 && cinematic && <div className="gamePhase3"></div>}
+        {gamePhase === 3 && cinematic && (
+          <div className="introPhase">
+            <h1>First Task</h1>
+            <img
+              src="https://i.pinimg.com/originals/51/9e/95/519e95518312baffc8af8c8462d53751.gif"
+              alt="dragons"
+            ></img>
+          </div>
+        )}
+        {gamePhase === 3 && !cinematic && (
+          <div className="gamePhase3">
+            <FirstTrial
+              getRandom={getRandom}
+              firstStudent={firstStudent}
+              secondStudent={secondStudent}
+              thirdStudent={thirdStudent}
+              character={character}
+            />
+          </div>
+        )}
       </div>
     );
   }

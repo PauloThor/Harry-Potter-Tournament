@@ -10,7 +10,7 @@ export default class Player extends Component {
   };
 
   render() {
-    const { character, assistant, handlePhase3 } = this.props;
+    const { character, assistant, handlePhase } = this.props;
     return (
       <div id="character-created">
         <div className="" id="player">
@@ -58,7 +58,10 @@ export default class Player extends Component {
             <figcaption>{assistant.name}</figcaption>
           </figure>
         </div>
-        <div className="gameButton continueButton" onClick={handlePhase3}></div>
+        <div
+          className="gameButton continueButton"
+          onClick={() => handlePhase(2200)}
+        ></div>
       </div>
     );
   }
