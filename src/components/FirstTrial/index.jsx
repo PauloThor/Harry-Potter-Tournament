@@ -115,7 +115,7 @@ export default class FirstTrial extends Component {
           <div className="ranking">
             <h2>First Trial: Ranking</h2>
             <figure>
-              <h3>Your Enemy</h3>
+              <h3>The dragon you faced</h3>
               <img src={dragon.image} alt={dragon.name} />
               <figcaption>{dragon.name}</figcaption>
             </figure>

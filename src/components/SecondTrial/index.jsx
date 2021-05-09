@@ -85,7 +85,7 @@ export default class SecondTrial extends Component {
           <div className="ranking">
             <h2>Second Trial: Ranking</h2>
             <figure>
-              <h3>Your friend</h3>
+              <h3>The friend you saved</h3>
               <img src={friend.image} alt={friend.name} />
               <figcaption>{friend.name}</figcaption>
             </figure>
