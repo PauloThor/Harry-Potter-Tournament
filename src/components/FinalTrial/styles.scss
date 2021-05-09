@@ -1,0 +1,14 @@
+.gameButton.restartButton {
+  background-image: url(../../assets/restart.png);
+  background-size: cover;
+  width: 150px;
+  margin-top: -20px;
+}
+
+.finalWin {
+  color: green;
+}
+
+.finalLose {
+  color: red;
+}

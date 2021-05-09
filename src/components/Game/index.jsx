@@ -1,7 +1,9 @@
 import { Component } from "react";
 import Character from "../Character";
+import FinalTrial from "../FinalTrial";
 import FirstTrial from "../FirstTrial";
 import Player from "../Player";
+import SecondTrial from "../SecondTrial";
 import Student from "../Student";
 
 import "./styles.scss";
@@ -11,6 +13,7 @@ export default class Game extends Component {
     character: "",
     gamePhase: 0,
     cinematic: false,
+    ranking: [],
   };
 
   chosenStudents = [
@@ -53,6 +56,15 @@ export default class Game extends Component {
     setTimeout(this.toggleCinematic, interval);
   };
 
+  handleRanking = (rank) => {
+    this.setState({ ranking: rank });
+  };
+
+  restartGame = () => {
+    const { toggleGame } = this.props;
+    toggleGame();
+  };
+
   render() {
     const {
       firstStudent,
@@ -60,9 +72,10 @@ export default class Game extends Component {
       thirdStudent,
       toggleGame,
       getRandom,
+      students,
     } = this.props;
 
-    const { character, gamePhase, cinematic } = this.state;
+    const { character, gamePhase, cinematic, ranking } = this.state;
 
     return (
       <div>
@@ -124,6 +137,49 @@ export default class Game extends Component {
               secondStudent={secondStudent}
               thirdStudent={thirdStudent}
               character={character}
+              handlePhase={this.handlePhase}
+              handleRanking={this.handleRanking}
+            />
+          </div>
+        )}
+        {gamePhase === 4 && cinematic && (
+          <div className="introPhase">
+            <h1>Second Task</h1>
+            <img
+              src="https://i.pinimg.com/originals/5f/44/fc/5f44fc6e9aa0556b942657329ac95ef9.gif"
+              alt="water-task"
+            ></img>
+          </div>
+        )}
+        {gamePhase === 4 && !cinematic && (
+          <div className="gamePhase4">
+            <SecondTrial
+              ranking={ranking}
+              character={character}
+              getRandom={getRandom}
+              handleRanking={this.handleRanking}
+              students={students}
+              handlePhase={this.handlePhase}
+            />
+          </div>
+        )}
+        {gamePhase === 5 && cinematic && (
+          <div className="introPhase">
+            <h1>Final Task</h1>
+            <img
+              src="https://uploads.spiritfanfiction.com/fanfics/capitulos/201712/a-profecia-11323557-181220171317.gif"
+              alt="Final Task"
+            />
+          </div>
+        )}
+        {gamePhase === 5 && !cinematic && (
+          <div className="gamePhase5">
+            <FinalTrial
+              character={character}
+              ranking={ranking}
+              getRandom={getRandom}
+              handleRanking={this.handleRanking}
+              restartGame={this.restartGame}
             />
           </div>
         )}

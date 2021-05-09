@@ -7,7 +7,6 @@ class App extends Component {
   state = {
     students: [],
     staff: [],
-    loading: true,
     gameStarted: false,
     firstStudent: "",
     secondStudent: "",

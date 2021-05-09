@@ -29,17 +29,18 @@
       font-weight: 600;
       border-radius: 15px;
       animation: appear 2s;
-      //   transition: 0.5s;
+      transition: 0.5s;
       cursor: pointer;
       background-image: url(../../assets/bg.png);
       background-size: cover;
       border: 2px solid #647b80;
+      background-color: #647b80;
 
       &:hover {
-        background-color: #647b80;
         background-image: none;
         color: orange;
         transform: translateY(-20%);
+        border: 2px solid #1d2729;
       }
     }
   }
@@ -51,10 +52,12 @@
 
   h2 {
     width: 100%;
+    animation: appearFromTop 2s;
   }
 
   figure {
     width: 40%;
+    animation: appear 2s;
 
     h3 {
       margin: 0.5rem 0;
@@ -85,6 +88,7 @@
       font-weight: 500;
       border-radius: 15px;
       border: 2px solid #647b80;
+      animation: appear 2s;
 
       label {
         &.rankingNumber {
@@ -101,7 +105,7 @@
   }
 
   .gameButton.continueButton {
-    margin-top: -1.5rem;
+    margin-top: -2rem;
   }
 }
 

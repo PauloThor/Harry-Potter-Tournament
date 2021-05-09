@@ -10,8 +10,10 @@
 h1 {
   font-style: normal;
   font-weight: 600;
-  font-size: 70px;
-  line-height: 95px;
+  font-size: 45px;
+  line-height: 90px;
+  width: 600px;
+  margin: 40px auto;
 }
 
 h3 {
@@ -32,11 +34,17 @@ div.start {
   background-size: cover;
   margin: 0 auto;
   border-radius: 15px;
-  box-shadow: 21px 14px 15px 5px #000000;
+  box-shadow: 11px 14px 15px 5px #000000;
   animation: button 1s infinite;
   cursor: pointer;
+  border: 2px solid #61858d;
+
+  &:hover {
+    border: 2px solid orange;
+  }
 }
 
 .startButton {
   background-image: url(../../assets/start.png);
+  margin-top: 120px;
 }

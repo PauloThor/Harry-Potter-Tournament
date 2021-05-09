@@ -10,7 +10,7 @@ export default class FirstTrial extends Component {
   state = {
     dragon: "",
     optionChosen: false,
-    ranking: [],
+    rankingPhase1: [],
   };
 
   dragons = {
@@ -42,7 +42,6 @@ export default class FirstTrial extends Component {
   };
 
   handlePoints = (points) => {
-    const { dragon } = this.state;
     const {
       getRandom,
       firstStudent,
@@ -62,9 +61,9 @@ export default class FirstTrial extends Component {
     let updatedCharacter = character;
 
     updatedCharacter.points = points - chosenDragon.points;
-    updatedFirst.points = 10 + getRandom(10);
-    updatedSecond.points = 10 + getRandom(10);
-    updatedThird.points = 10 + getRandom(10);
+    updatedFirst.points = 10 + getRandom(5);
+    updatedSecond.points = 10 + getRandom(5);
+    updatedThird.points = 10 + getRandom(5);
 
     this.setState({
       character: updatedCharacter,
@@ -75,20 +74,27 @@ export default class FirstTrial extends Component {
     });
 
     this.setState({
-      ranking: [character, firstStudent, secondStudent, thirdStudent].sort(
-        (a, b) => b.points - a.points
-      ),
+      rankingPhase1: [
+        character,
+        firstStudent,
+        secondStudent,
+        thirdStudent,
+      ].sort((a, b) => b.points - a.points),
     });
-    console.log(this.state.ranking);
+  };
+
+  handlePhase4 = () => {
+    const { handleRanking, handlePhase } = this.props;
+    const { rankingPhase1 } = this.state;
+
+    handlePhase(1400);
+    handleRanking(rankingPhase1);
   };
 
   // ideias: keyframe trocando imagem do dragão, ao clicar no botão tira o id que dá o keyframe e deixa só a imagem do dragão escolhido
-  // quantidade de pontos pela escolha - pontos de acordo com o dragão que cair
-  // ranking aleatório pros outros jogadores
 
   render() {
-    const { character } = this.props;
-    const { optionChosen, dragon, ranking } = this.state;
+    const { optionChosen, dragon, rankingPhase1 } = this.state;
     return (
       <>
         {!optionChosen && (
@@ -115,31 +121,34 @@ export default class FirstTrial extends Component {
             </figure>
             <ul>
               <li>
-                <label>{ranking[0].name}</label>
+                <label>{rankingPhase1[0].name}</label>
                 <label className="rankingNumber">
-                  Points: {ranking[0].points}
+                  Points: {rankingPhase1[0].points}
                 </label>
               </li>
               <li>
-                <label>{ranking[1].name}</label>
+                <label>{rankingPhase1[1].name}</label>
                 <label className="rankingNumber">
-                  Points: {ranking[1].points}
+                  Points: {rankingPhase1[1].points}
                 </label>
               </li>
               <li>
-                <label>{ranking[2].name}</label>
+                <label>{rankingPhase1[2].name}</label>
                 <label className="rankingNumber">
-                  Points: {ranking[2].points}
+                  Points: {rankingPhase1[2].points}
                 </label>
               </li>
               <li>
-                <label>{ranking[3].name}</label>
+                <label>{rankingPhase1[3].name}</label>
                 <label className="rankingNumber">
-                  Points: {ranking[3].points}
+                  Points: {rankingPhase1[3].points}
                 </label>
               </li>
             </ul>
-            <div className="gameButton continueButton"></div>
+            <div
+              className="gameButton continueButton"
+              onClick={this.handlePhase4}
+            ></div>
           </div>
         )}
       </>
