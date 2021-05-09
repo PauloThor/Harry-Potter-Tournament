@@ -15,7 +15,7 @@ export default class SecondTrial extends Component {
   };
 
   getFriend = () => {
-    const { students, getRandom, character } = this.props;
+    const { students, getRandom } = this.props;
     const { firstPlayer, secondPlayer, thirdPlayer, fourthPlayer } = this.state;
 
     const championsNames = [

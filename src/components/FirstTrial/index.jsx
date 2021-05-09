@@ -91,8 +91,6 @@ export default class FirstTrial extends Component {
     handleRanking(rankingPhase1);
   };
 
-  // ideias: keyframe trocando imagem do dragão, ao clicar no botão tira o id que dá o keyframe e deixa só a imagem do dragão escolhido
-
   render() {
     const { optionChosen, dragon, rankingPhase1 } = this.state;
     return (

@@ -70,7 +70,6 @@ export default class Game extends Component {
       firstStudent,
       secondStudent,
       thirdStudent,
-      toggleGame,
       getRandom,
       students,
     } = this.props;
