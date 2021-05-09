@@ -42,6 +42,12 @@ export default class FinalTrial extends Component {
     handleRanking(rankingPhaseFinal);
   };
 
+  handleSecretArea = () => {
+    const { handlePhase } = this.props;
+
+    handlePhase(2000);
+  };
+
   render() {
     const { optionChosen, rankingPhaseFinal } = this.state;
     const { restartGame, character } = this.props;
@@ -89,7 +95,7 @@ export default class FinalTrial extends Component {
             <p>Which path do you choose? (4/4)</p>
             <ul>
               <li onClick={() => this.handlePoints(10)}>First Left</li>
-              <li onClick={() => this.handlePoints(0)}>Second Left</li>
+              <li onClick={this.handleSecretArea}>Second Left</li>
               <li onClick={() => this.handlePoints(2)}>First Right</li>
               <li onClick={() => this.handlePoints(4)}>Second Right</li>
             </ul>

@@ -12,6 +12,8 @@ class App extends Component {
     secondStudent: "",
     thirdStudent: "",
     assistant: "",
+    all: "",
+    voldemort: "",
   };
 
   toggleGame = () => {
@@ -35,6 +37,14 @@ class App extends Component {
     fetch("https://hp-api.herokuapp.com/api/characters/staff")
       .then((response) => response.json())
       .then((response) => this.setState({ staff: response }));
+
+    fetch("https://hp-api.herokuapp.com/api/characters")
+      .then((response) => response.json())
+      .then((response) =>
+        this.setState({
+          voldemort: response.find((e) => e.name === "Lord Voldemort"),
+        })
+      );
   }
 
   getRandom = (size) => {
@@ -92,6 +102,7 @@ class App extends Component {
       secondStudent,
       thirdStudent,
       assistant,
+      voldemort,
     } = this.state;
     return (
       <div className="App">
@@ -107,6 +118,7 @@ class App extends Component {
             toggleGame={this.toggleGame}
             getRandom={this.getRandom}
             assistant={assistant}
+            voldemort={voldemort}
           />
         )}
       </div>
