@@ -16,6 +16,6 @@ This is a game based on Harry Potter's tournament, where you chan choose your ch
 Desktop
 
 <img src='https://i.im.ge/2021/08/22/WFlgy.png'>
-<img src='https://i.ibb.co/vBngFZ0/Captura-de-tela-de-2021-08-22-12-13-00.png'>
-<img src='https://i.ibb.co/1f6fkBS/Captura-de-tela-de-2021-08-22-12-13-49.png'>
-<img src='https://i.ibb.co/R9j7br1/Captura-de-tela-de-2021-08-22-12-14-19.png'>
+<img src='https://i.im.ge/2021/08/22/WFX0J.png'>
+<img src='https://i.im.ge/2021/08/22/WFora.png'>
+<img src='https://i.im.ge/2021/08/22/WFuMS.png'>
